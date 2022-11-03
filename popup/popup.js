@@ -12,4 +12,4 @@ function carregarConfiguracao() {
             document.getElementById('txtGale').textContent = `Fazer ${res.configuracao.gale} Gale`
         }
     })
-}AASA
+}

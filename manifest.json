@@ -1,31 +1,37 @@
 {
-    "manifest_version": 2,
-    "name": "Bot changer",
-    "short_name": "bot", 
-    "description": "Bot de programação ",
+    "manifest_version": 3,
+    "name": "Bot",
+    "description": "Bot",
     "version": "1.0",
+    "icons": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "img/icon.png",
+            "24": "img/icon.png",
+            "32": "img/icon.png"
+        },
+        "default_title": "Bot Elite",
+        "default_popup": "popup/popup.html"
+    },
+    "options_page": "options/options.html",
     "content_scripts": [
         {
-            
-            "matches": ["<all_urls>"],
-            "js": ["content.js"]
+            "matches": [
+                "https://cachedownload-br.p-content.gambling-malta.com/live/bundles/*",
+                "https://dl-com.c365play.com/live_desktop/bundles/*"
+            ],
+            "js": [
+                "content/contentScript.js"
+            ],
+            "run_at": "document_start"
         }
     ],
-    "background":{
-        "page": "background/background.html",
-        "persistend": false
-    },
-    "options_ui":{
-        "open_in_tab": true,
-        "page": "options/index.html"
-    },
-    "browser_action": {
-        "default_title": "Video Speed Changer",
-        "default_popup": "popup/index.html"
-    },
-    
     "permissions": [
-        "tabs",
+        "notifications",
         "storage"
     ]
 }
