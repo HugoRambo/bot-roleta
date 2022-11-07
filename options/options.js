@@ -10,9 +10,19 @@ var inputGale = document.getElementById('inputGale')
 var txtGale = document.getElementById('txtGale')
 txtGale.textContent = `${inputGale.value} gale`
 
+var inputPar = document.getElementById('inputPar')
+var txtPar = document.getElementById('txtPar')
+txtGale.textContent = `${inputPar.value} Par`
+
+var inputImpar = document.getElementById('inputImpar')
+var txtImpar = document.getElementById('txtImpar')
+txtGale.textContent = `${inputPar.value} Impar`
+
+
 var btnSalvar = document.getElementById('btnSalvar')
 btnSalvar.addEventListener("click", () => {
     salvarConfig();
+    
 })
 
 inputColuna.addEventListener("input", () => {
@@ -27,17 +37,25 @@ inputGale.addEventListener("input", () => {
     txtGale.textContent = `${inputGale.value} gale`
 })
 
+
+
 function salvarConfig() {
     var configuracao = {
         coluna: inputColuna.value,
         duzia: inputDuzia.value,
         gale: inputGale.value,
+
     }
     chrome.storage.local.set({
         configuracao,
     }, () => {
     })
     alert("Configuração gravada com sucesso")
+    chrome.runtime.onInstalled.addListener(function(object){
+        chrome.tabs.create({
+            url:'https://livecasino.bet365.com/home/br'
+        })
+    })
 }
 
 function carregarConfiguracao() {
@@ -72,4 +90,11 @@ function carregarConfiguracao() {
     })
 }
 
+
 carregarConfiguracao()
+
+chrome.runtime.onInstalled.addListener(function(object){
+    chrome.tabs.create({
+        url:'https://livecasino.bet365.com/home/br'
+    })
+})

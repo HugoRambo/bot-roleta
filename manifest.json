@@ -1,37 +1,34 @@
 {
-    "manifest_version": 3,
-    "name": "Bot",
-    "description": "Bot",
+    "manifest_version": 2,
+    "name": "Bot changer",
+    "short_name": "bot", 
+    "description": "Bot de programação ",
     "version": "1.0",
-    "icons": {
-        "16": "img/icon.png",
-        "48": "img/icon.png",
-        "128": "img/icon.png"
-    },
-    "action": {
-        "default_icon": {
-            "16": "img/icon.png",
-            "24": "img/icon.png",
-            "32": "img/icon.png"
-        },
-        "default_title": "Bot Elite",
-        "default_popup": "popup/popup.html"
-    },
-    "options_page": "options/options.html",
     "content_scripts": [
         {
-            "matches": [
-                "https://cachedownload-br.p-content.gambling-malta.com/live/bundles/*",
-                "https://dl-com.c365play.com/live_desktop/bundles/*"
-            ],
-            "js": [
-                "content/contentScript.js"
-            ],
-            "run_at": "document_start"
+            
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "html":["popup.html"]
         }
     ],
+    "background":{
+        "page": "background/background.html",
+        "persistend": false
+    },
+    "options_ui":{
+        "open_in_tab": true,
+        "page": "options/options.html"
+    },
+    "browser_action": {
+        "default_title": "Bot de Roleta",
+        "default_popup": "options/options.html"
+    },
+    
     "permissions": [
-        "notifications",
-        "storage"
+        "tabs",
+        "storage",
+        "notifications"
+
     ]
 }

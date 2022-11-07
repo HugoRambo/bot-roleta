@@ -6,7 +6,7 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to bottom, #122e0c, #2b6356, #2f3e24);
 }
 
 span {
@@ -14,7 +14,7 @@ span {
 	font-size: 1.0em;
 	justify-content: center;
 	display: flex;
-	margin: 3%;
+	margin: 4%;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
@@ -84,7 +84,7 @@ button {
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #0ee023;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;

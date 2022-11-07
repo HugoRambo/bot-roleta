@@ -28,3 +28,43 @@ let primeiraColuna = ['1', '4', '7', '10', '13', '16', '19', '22', '25', '28', '
 let segundaColuna = ['2', '5', '8', '11', '14', '17', '20', '23', '26', '29', '32', '35']
 let terceiraColuna = ['3', '6', '9', '12', '15', '18', '21', '24', '27', '30', '33', '36']
 
+let inverterLeitura = false 
+let leituras = 0
+
+var configuracao = {
+    coluna: 0,
+    duzia: 0,
+    gale: 0,
+    par:  0,
+    impar:  0
+}
+
+//Salva configuração local
+function salvarConfig() {
+    chrome.storage.local.set({
+        configuracao,
+    }, () => {
+    })
+}
+function carregarConfiguracao() {
+    chrome.storage.local.get(["configuracao"], (res) => {
+        if (res.configuracao == undefined) {
+            configuracao.coluna = 5
+            configuracao.duzia = 5
+            configuracao.gale = 1
+            
+
+            colunaRep = configuracao.coluna
+            duziaRep = configuracao.duzia
+            gale = configuracao.gale
+
+            salvarConfig()
+        } else {
+            configuracao = res.configuracao
+
+            colunaRep = configuracao.coluna
+            duziaRep = configuracao.duzia
+            gale = configuracao.gale
+        }
+    })
+}
