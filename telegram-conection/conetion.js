@@ -1,4 +1,8 @@
-var url = window.location.href;
+
+//Trazer os seletores para conectar no bot do telegram. 
+
+
+/*var url = window.location.href;
 var ver = 'https://livecasino.bet365.com/home/br';
 if(url.indexOf(ver) != -1){
 	function createCookie(name, value, days) {
@@ -36,4 +40,8 @@ if(url.indexOf(ver) != -1){
 		method: 'GET'
 		})
 		.then(response => response.json())
-	}
+	}}
+
+
+	*/
+

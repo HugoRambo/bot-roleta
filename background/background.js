@@ -68,3 +68,38 @@ function carregarConfiguracao() {
         }
     })
 }
+function analisandoEstrategias() {
+     //Buscar tudo as roleta, seletor class
+    qtdRoletas = document.getElementsByClassName('lobby-tables__item').length
+    //valida lobby
+    if (qtdRoletas > 1) {
+        apostouDuzia = false
+        apostouColuna = false}
+
+        // inserir display no lobby
+        if (!displayLobbyExists) {
+            if (document.querySelector('.lobby-header__filterqDmLZJ0RC7XlyyjENEqe')) {
+                painelLobby = document.querySelector('.lobby-header__filterqDmLZJ0RC7XlyyjENEqe')
+            } else if (document.querySelector('.lobby__filter')) {
+                painelLobby = document.querySelector('.lobby__filter')
+            }
+            painelLobby.insertAdjacentHTML('afterbegin', '<h1 id = "displaybotlobby" style="width: 90%;background-color: #56ef00;color: black;text-align: center; font-size: xx-large;font-weight: bolder;align-self: center;"></h1>')
+            //Aciona roletas ou nao
+            displayRoletaExists = false
+            displayLobbyExists = true
+        }
+
+        inserirTextoDisplay(`Bot Auto - ${contagemAcertos} ACERTOS - ${contagemErros} ERROS - MONITORANDO`, 1)
+        //listar as roletas do lobby
+        var roletasLobby = listarRoletasLobby(qtdRoletas)
+        //incrementr as roletas para buscar confirmação de estrategia
+        for (let i = 0; i < roletasLobby.length; i++) {
+            if (estrategiaAltosbaixos(roletasLobby[i].sequencia) == 1) {
+                document.getElementsByClassName('lobby-table__game-logo')[i].click()
+                break
+            } else {
+                inserirTextoDisplay(`Bot Auto - ${contagemAcertos} ACERTOS - ${contagemErros} ERROS - MONITORANDO`, 1)
+            }
+        }}
+    
+//FALTA TRANSFORMAR TODAS as roletas buscadas no selector de cima em um array, pra conseguir aplicar a estrategia. 
