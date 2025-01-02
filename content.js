@@ -1,5 +1,5 @@
 
-const login = "hugorambo18" aEGIVYwBe8
+const login = "hugorambo18"
 
 const senha = "Fifaemarra2008"
 
