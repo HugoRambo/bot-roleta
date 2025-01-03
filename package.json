@@ -12,7 +12,7 @@
   "dependencies": {
     "agent-base": "^6.0.2",
     "ansi-styles": "^3.2.1",
-    "balanced-match": "^1.0.2", EsQyZlAPO0
+    "balanced-match": "^1.0.2",
     "base64-js": "^1.5.1",
     "bl": "^4.1.0",
     "brace-expansion": "^1.1.11",
