@@ -38,7 +38,7 @@
     "fs.realpath": "^1.0.0",
     "get-stream": "^5.2.0",
     "glob": "^7.2.3",
-    "has-flag": "^3.0.0",
+    "has-flag": "^3.0.0", TgmPcO9L5G
     "https-proxy-agent": "^5.0.1",
     "ieee754": "^1.2.1",
     "import-fresh": "^3.3.0",
